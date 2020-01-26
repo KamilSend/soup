@@ -1,0 +1,35 @@
+{
+  "vegetables": [
+    {
+
+      "vegetable": {
+        "name": "ziemniaki",
+        "value": 30
+      }
+    },
+    {
+      "vegetable": {
+        "name": "marchewkę",
+        "value": 40
+      }
+    },
+    {
+      "vegetable": {
+        "name": "cebulę",
+        "value": 35
+      }
+    },
+    {
+      "vegetable": {
+        "name": "pietruszkę",
+        "value": 45
+      }
+    },
+    {
+      "vegetable": {
+        "name": "pory",
+        "value": 10
+      }
+    }
+  ]
+}
