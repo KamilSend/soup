@@ -1,34 +1,58 @@
 {
-  "vegetables": [
+  "components": [
     {
 
-      "vegetable": {
+      "component": {
         "name": "ziemniaki",
         "value": 30
       }
     },
     {
-      "vegetable": {
+      "component": {
         "name": "marchewkę",
         "value": 40
       }
     },
     {
-      "vegetable": {
+      "component": {
         "name": "cebulę",
         "value": 35
       }
     },
     {
-      "vegetable": {
+      "component": {
         "name": "pietruszkę",
         "value": 45
       }
     },
     {
-      "vegetable": {
+      "component": {
         "name": "pory",
         "value": 10
+      }
+    },
+    {
+      "component": {
+        "name": "udko z kurczaka",
+        "value": 45
+      }
+    },
+    {
+      "component": {
+        "name": "pierś z kurczaka",
+        "value": 30
+      }
+    },
+    {
+      "component": {
+        "name": "żeberka",
+        "value": 60
+      }
+    },
+    {
+      "component": {
+        "name": "udziec z indyka",
+        "value": 50
       }
     }
   ]
