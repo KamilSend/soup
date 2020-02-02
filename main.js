@@ -2,16 +2,47 @@ $.getJSON('table.json', function(data){
 
     const buttons = document.querySelectorAll('button'); //node.list zawierająca wszystkie przyciski warzyw
     const ingredients = []; //tablica wszystkich wybranych składników
+    const nowButton = document.querySelector('.now');
 
     let now;
-    let hour
-    let minute
+    let hour;
+    let minute;
+
+    function leadingZero(i) {
+        return (i < 10)? "0"+i : i;
+    }
+
+    const timeInput = document.getElementById('timeInput');
+
     setInterval(function(){
-    now = new Date(); //pobranie czasu systemowego
+        nowButton.addEventListener('click', function(){
+            now = new Date();
+            hour = now.getHours(); //wyciągnięcie godzin z czasu
+            hour=leadingZero(hour);
+            minute = now.getMinutes(); //wyciągnięcie minut z czasu
+            minute = leadingZero(minute);
+            timeInput.value = hour + ":" + minute;
+            //timeInput.value = new Date().getHours() + ":" + new Date().getMinutes();
+            new Date([[]]);
+        });
 
 
-    hour = now.getHours(); //wyciągnięcie godzin z czasu
-    minute = now.getMinutes(); //wyciągnięcie minut z czasu
+
+
+        now = new Date(`December 17, 1995 ${timeInput.value}`); //pobranie czasu systemowego
+        hour = now.getHours(); //wyciągnięcie godzin z czasu
+        minute = now.getMinutes(); //wyciągnięcie minut z czasu
+
+
+        /*nowButton.addEventListener('click', function(){
+            now = new Date();
+            hour = now.getHours(); //wyciągnięcie godzin z czasu
+            minute = now.getMinutes(); //wyciągnięcie minut z czasu
+        });*/
+
+    /*hour = now.getHours(); //wyciągnięcie godzin z czasu
+    minute = now.getMinutes(); //wyciągnięcie minut z czasu*/
+
     }, 1000);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function table(){
