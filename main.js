@@ -43,30 +43,30 @@ $.getJSON('table.json', function(data){
         })
     }
 
-document.querySelector('.result').addEventListener('click', function(){//funkcja pokazująca wynik w konsoli
-    console.log(`Najsampierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`);
-    display.textContent =`Najsampierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
-    for (let i = 1; i < (ingredients.length); i++) {
+    document.querySelector('.result').addEventListener('click', function(){//funkcja pokazująca wynik w konsoli
+        console.log(`Najsampierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`);
+        display.textContent =`Najsampierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
+        for (let i = 1; i < (ingredients.length); i++) {
 
-        const addingMinutes = ingredients[0].value - ingredients[i].value; //po jakim czasie od rozpoczęcia gotowania wrzucić
-        let addingTime = minute + addingMinutes;
-        let addingHour = hour;
-        //zadziała tylko jeśli nie trzeba będzie przerzucać godziny więcej niż raz, czyli wywali się przy różnicach większych od godziny
-        if(addingTime>59 && (addingHour - hour <=1)){
-            addingTime = addingTime - 60;
-            addingHour +=1;
+            const addingMinutes = ingredients[0].value - ingredients[i].value; //po jakim czasie od rozpoczęcia gotowania wrzucić
+            let addingTime = minute + addingMinutes;
+            let addingHour = hour;
+            //zadziała tylko jeśli nie trzeba będzie przerzucać godziny więcej niż raz, czyli wywali się przy różnicach większych od godziny
+            if(addingTime>59 && (addingHour - hour <=1)){
+                addingTime = addingTime - 60;
+                addingHour +=1;
+            }
+            addingTime = leadingZero(addingTime);
+            addingHour = leadingZero(addingHour);
+            console.log(`o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`);
+            //display.textContent += ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
+
+            const el = [];//utworzenie tablicy elementów div w których będą wyświetlane kolejne czasy
+            el[i] =document.createElement("div");
+            el[i].textContent = ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
+            display.appendChild(el[i]);
+
         }
-        addingTime = leadingZero(addingTime);
-        addingHour = leadingZero(addingHour);
-        console.log(`o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`);
-        //display.textContent += ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
-
-        const el = [];
-        el[i] =document.createElement("div");
-        el[i].textContent = ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
-        display.appendChild(el[i]);
-
-    }
-})
+    })
 
 });
