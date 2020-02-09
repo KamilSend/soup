@@ -68,6 +68,8 @@ document.querySelector('.result').addEventListener('click', function(){//funkcja
             addingTime = addingTime - 60;
             addingHour +=1;
         }
+        addingTime = leadingZero(addingTime);
+        addingHour = leadingZero(addingHour);
         console.log(`o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`);
         //display.textContent += ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
 
