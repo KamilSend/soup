@@ -39,7 +39,7 @@ $.getJSON('table.json', function(data){
                 return a.value - b.value;
             });
             ingredients.reverse(); //odwrócenie tablicy żeby pierwsze były największe wartości
-            buttons[i].classList.toggle('btnActive');
+            buttons[i].classList.toggle('btnActive');//zaznaczenie wybranego składnika
         })
     }
 
@@ -65,7 +65,6 @@ document.querySelector('.result').addEventListener('click', function(){//funkcja
         el[i] =document.createElement("div");
         el[i].textContent = ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
         display.appendChild(el[i]);
-
 
     }
 })
