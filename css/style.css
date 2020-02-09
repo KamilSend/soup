@@ -5,6 +5,20 @@
 
 .foodGroup {
   padding: 10px; }
-  .foodGroup button {
-    margin: 5px;
-    padding: 10px; }
+
+.ingredient {
+  border: none;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer; }
+
+.btnActive {
+  border: 2px solid black; }
+
+.vegetable {
+  background-color: lightgreen; }
+
+.meat {
+  background-color: saddlebrown; }

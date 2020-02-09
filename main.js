@@ -1,6 +1,6 @@
 $.getJSON('table.json', function(data){
 
-    const buttons = document.querySelectorAll('button'); //node.list zawierająca wszystkie przyciski warzyw
+    const buttons = document.querySelectorAll('button'); //node.list zawierająca wszystkie przyciski składników
     const ingredients = []; //tablica wszystkich wybranych składników
     const nowButton = document.querySelector('.now');
     const display = document.querySelector('.displayResult')
@@ -27,22 +27,9 @@ $.getJSON('table.json', function(data){
             new Date([[]]);
         });
 
-
-
-
         now = new Date(`December 17, 1995 ${timeInput.value}`); //pobranie czasu systemowego
         hour = now.getHours(); //wyciągnięcie godzin z czasu
         minute = now.getMinutes(); //wyciągnięcie minut z czasu
-
-
-        /*nowButton.addEventListener('click', function(){
-            now = new Date();
-            hour = now.getHours(); //wyciągnięcie godzin z czasu
-            minute = now.getMinutes(); //wyciągnięcie minut z czasu
-        });*/
-
-    /*hour = now.getHours(); //wyciągnięcie godzin z czasu
-    minute = now.getMinutes(); //wyciągnięcie minut z czasu*/
 
     }, 1000);
     for (let i = 0; i < buttons.length; i++) {
@@ -52,6 +39,7 @@ $.getJSON('table.json', function(data){
                 return a.value - b.value;
             });
             ingredients.reverse(); //odwrócenie tablicy żeby pierwsze były największe wartości
+            buttons[i].classList.toggle('btnActive');
         })
     }
 
