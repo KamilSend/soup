@@ -69,7 +69,14 @@ document.querySelector('.result').addEventListener('click', function(){//funkcja
             addingHour +=1;
         }
         console.log(`o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`);
-        display.textContent += ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
+        //display.textContent += ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
+
+        const el = [];
+        el[i] =document.createElement("div");
+        el[i].textContent = ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
+        display.appendChild(el[i]);
+
+
     }
 })
 
