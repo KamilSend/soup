@@ -1,31 +1,42 @@
 body{
   display:flex;
   justify-content: center;
+  background-color: aliceblue;
 }
 main{
   display:flex;
   flex-direction: column;
+  align-items: center;
   width:90vw;
   height:90vh;
-}
-.now, .result{
-  float:left;
-  border:2px solid red;
-  padding:2px;
-}
-.foodGroup{
-  padding:10px;
-
 
 }
 
-.ingredient{
-  border: 2px solid transparent;
+.button{
   border-radius: 20px;
   margin:5px;
   padding:5px 10px;
   outline:none;
   cursor:pointer;
+  box-shadow: 1px 1px 5px 1px gray;
+}
+
+.now, .result{
+  background-color: darkred;
+  color: white;
+}
+
+.result{
+  padding: 10px 20px;
+}
+.foodGroup{
+  display: flex;
+  flex-wrap: wrap;
+  padding:10px;
+}
+
+.ingredient{
+  border: 2px solid transparent;
 }
 
 .btnActive{
@@ -37,5 +48,13 @@ main{
 }
 
 .meat{
-  background-color: saddlebrown;
+  background-color: sandybrown;
 }
+ #timeInput{
+   min-height: 30px;
+   font-size:24px;
+   padding-left:30px;
+   border:none;
+   outline:none;
+   background-color: transparent;
+ }

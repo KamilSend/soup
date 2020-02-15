@@ -15,28 +15,38 @@
 </head>
 <body>
 <main>
-Start gotowania<br>
-Określ czas: godzina i minuta:
-<input type="time" value="16:55" id="timeInput">
-<br><div class="now">teraz</div><br>
+
+    <h1>Zupny kalkulator</h1>
+    <h2>Wybierz swoje składniki i dowiedz się kiedy je dodać aby wszystkie ugotowały się w tym samym czasie</h2>
+
 <div class="foodGroup">
     Warzywa:
-    <button class="ingredient vegetable">Ziemniaki</button>
-    <button class="ingredient vegetable">Marchewka</button>
-    <button class="ingredient vegetable">Cebula</button>
-    <button class="ingredient vegetable">Pietruszka</button>
-    <button class="ingredient vegetable">Pory</button>
+    <button class="ingredient button vegetable">Ziemniaki</button>
+    <button class="ingredient button vegetable">Marchewka</button>
+    <button class="ingredient button vegetable">Cebula</button>
+    <button class="ingredient button vegetable">Pietruszka</button>
+    <button class="ingredient button vegetable">Pory</button>
+    <button class="ingredient button vegetable">Fasolka szparagowa</button>
+    <button class="ingredient button vegetable">Kalafior</button>
+    <button class="ingredient button vegetable">Papryka</button>
+    <button class="ingredient button vegetable">Cukinia</button>
+    <button class="ingredient button vegetable">Seler</button>
+    <button class="ingredient button vegetable">Burak</button>
+    <button class="ingredient button vegetable">Czosnek</button>
 </div>
 <div class="foodGroup">
     Mięsa:
-    <button class="ingredient meat">Udko z kurczaka</button>
-    <button class="ingredient meat">Pierś z kurczaka</button>
-    <button class="ingredient meat">Żeberka</button>
-    <button class="ingredient meat">Udziec z indyka</button>
+    <button class="ingredient button meat">Udko z kurczaka</button>
+    <button class="ingredient button meat">Pierś z kurczaka</button>
+    <button class="ingredient button meat">Żeberka</button>
+    <button class="ingredient button meat">Udziec z indyka</button>
 </div>
+    <h3>Określ start gotowania:</h3>
+    <input type="time" value="12:00" id="timeInput">
+    <h3>lub</h3>
+    <div class="button now">Zacznij teraz</div><br>
 
-
-    <div class="result">Wynik</div>
+    <div class="button result">Oblicz</div>
     <div class="displayResult"></div>
 </main>
 

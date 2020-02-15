@@ -33,6 +33,48 @@
     },
     {
       "component": {
+        "name": "fasolkę szparagową",
+        "value": 15
+      }
+    },
+    {
+      "component": {
+        "name": "kalafiora",
+        "value": 15
+      }
+    },
+    {
+      "component": {
+        "name": "paprykę",
+        "value": 20
+      }
+    },
+    {
+      "component": {
+        "name": "cukinię",
+        "value": 20
+      }
+    },
+    {
+      "component": {
+        "name": "selera",
+        "value": 45
+      }
+    },
+    {
+      "component": {
+        "name": "buraka",
+        "value": 45
+      }
+    },
+    {
+      "component": {
+        "name": "czosnek",
+        "value": 10
+      }
+    },
+    {
+      "component": {
         "name": "udko z kurczaka",
         "value": 45
       }
