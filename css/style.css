@@ -27,6 +27,7 @@ main {
 
 .foodGroup {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   padding: 10px; }
 

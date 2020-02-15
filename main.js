@@ -32,14 +32,33 @@ $.getJSON('table.json', function(data){
         minute = now.getMinutes(); //wyciągnięcie minut z czasu
 
     }, 1000);
-    for (let i = 0; i < buttons.length; i++) {
+
+   /* for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function table(){
+
             ingredients.push(data.components[i].component); //dodawanie klikniętych elementów do tablicy
             ingredients.sort(function(a, b) { //posortowanie tablicy
                 return a.value - b.value;
             });
             ingredients.reverse(); //odwrócenie tablicy żeby pierwsze były największe wartości
             buttons[i].classList.toggle('btnActive');//zaznaczenie wybranego składnika
+        })
+    }*/
+
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function table(){
+            buttons[i].classList.toggle('btnActive');//zaznaczenie wybranego składnika
+            if (buttons[i].classList.contains('btnActive')){
+                ingredients.push(data.components[i].component); //dodawanie klikniętych elementów do tablicy
+                ingredients.sort(function(a, b) { //posortowanie tablicy
+                    return a.value - b.value;
+                });
+                ingredients.reverse(); //odwrócenie tablicy żeby pierwsze były największe wartości
+            }
+            else{
+                console.log('dupa');
+                ingredients.pop(data.components[i].component);
+            }
         })
     }
 
