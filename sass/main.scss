@@ -1,3 +1,5 @@
+@import './_definitions.scss';
+
 body{
   display:flex;
   justify-content: center;
@@ -61,16 +63,27 @@ main{
  }
 
  #displayResult{
-   position:fixed;
+   position:absolute;
    left:5vw;
-   //top:5vh;
+   right:5vw;
    top:50vh;
    transform: translateY(-50%);
-   width:90vw;
-   //height:30vh;
-   background-color: green;
+
+   background-color: #fefefe;
+   padding:2vh;
+   box-shadow: 1px 1px 5px #000000;
+   border-radius: 5px;
    display:none;
    z-index: 3;
+
+   @include respond(phone-land){
+     top:5vh;
+     transform: translateY(0);
+   }
+
+   div{
+     padding:0.5vh;
+   }
  }
 
 #displayResult.active,

@@ -1,3 +1,13 @@
+:root {
+  --color-black:#353535;
+  --color-black-dark:#252525;
+  --color-grey:#718792;
+  --color-grey-2:#91a7b2;
+  --color-grey-light:#B0BEC5;
+  --color-grey-light-2:#C5CED9;
+  --color-red:#c62828;
+  --color-red-light:#d65858; }
+
 body {
   display: flex;
   justify-content: center;
@@ -52,14 +62,23 @@ main {
   background-color: transparent; }
 
 #displayResult {
-  position: fixed;
+  position: absolute;
   left: 5vw;
+  right: 5vw;
   top: 50vh;
   transform: translateY(-50%);
-  width: 90vw;
-  background-color: green;
+  background-color: #fefefe;
+  padding: 2vh;
+  box-shadow: 1px 1px 5px #000000;
+  border-radius: 5px;
   display: none;
   z-index: 3; }
+  @media only screen and (max-height: 450px) {
+    #displayResult {
+      top: 5vh;
+      transform: translateY(0); } }
+  #displayResult div {
+    padding: 0.5vh; }
 
 #displayResult.active,
 #cover.active {
