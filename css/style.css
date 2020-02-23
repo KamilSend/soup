@@ -8,6 +8,10 @@
   --color-red:#c62828;
   --color-red-light:#d65858; }
 
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0; }
+
 body {
   display: flex;
   justify-content: center;
@@ -19,6 +23,12 @@ main {
   align-items: center;
   width: 90vw;
   height: 90vh; }
+  main h1 {
+    padding: 3vh; }
+  main h2 {
+    padding: 2vh; }
+  main h3.paddingMedium {
+    padding: 4vh; }
 
 .button {
   border-radius: 20px;
