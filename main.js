@@ -73,6 +73,13 @@ $.getJSON('table.json', function(data){
 
     //obliczanie czasów dodawania składników--------------------------------------------------------
     document.querySelector('.result').addEventListener('click', function(){
+
+
+            $('#result').click(function(){
+                $("html, body").animate({ scrollTop: 0 }, 500);
+                return false;
+            });
+
         //display.textContent +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
         display.innerHTML +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
         for (let i = 1; i < (ingredients.length); i++) {
@@ -102,6 +109,9 @@ $.getJSON('table.json', function(data){
                 document.querySelector('#cover').classList.remove('active');
                 display.innerHTML ='<div id="close" class="close">X</div>';
             });
+
+
+
         }
     });
 
