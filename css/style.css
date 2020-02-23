@@ -50,3 +50,34 @@ main {
   border: none;
   outline: none;
   background-color: transparent; }
+
+#displayResult {
+  position: fixed;
+  left: 5vw;
+  top: 50vh;
+  transform: translateY(-50%);
+  width: 90vw;
+  background-color: green;
+  display: none;
+  z-index: 3; }
+
+#displayResult.active,
+#cover.active {
+  display: block; }
+
+.close {
+  position: absolute;
+  right: 0.5vw;
+  top: 0.5vw;
+  cursor: pointer; }
+
+#cover {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: lightgray;
+  z-index: 2;
+  opacity: .2;
+  display: none; }

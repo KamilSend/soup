@@ -3,16 +3,20 @@ $.getJSON('table.json', function(data){
     const buttons = document.querySelectorAll('button'); //node.list zawierająca wszystkie przyciski składników
     const ingredients = []; //tablica wszystkich wybranych składników
     const nowButton = document.querySelector('.now');
-    const display = document.querySelector('.displayResult')
+    const display = document.querySelector('#displayResult');
 
     let now;
     let hour;
     let minute;
 
+
+    //funkcja dodająca zero, jeżeli jest mniej niż 10 minut-----------------------------------
     function leadingZero(i) {
         return (i < 10)? "0"+i : i;
     }
 
+
+    //wczytanie obecnego czasu------------------------------------------------------------------------
     const timeInput = document.getElementById('timeInput');
 
     setInterval(function(){
@@ -45,6 +49,12 @@ $.getJSON('table.json', function(data){
         })
     }*/
 
+   //tworzenie przycisków ze składnikami-----------------------------------------------------------
+
+
+
+
+   //wybieranie składników-------------------------------------------------------------------------
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function table(){
             buttons[i].classList.toggle('btnActive');//zaznaczenie wybranego składnika
@@ -56,15 +66,15 @@ $.getJSON('table.json', function(data){
                 ingredients.reverse(); //odwrócenie tablicy żeby pierwsze były największe wartości
             }
             else{
-                console.log('dupa');
                 ingredients.pop(data.components[i].component);
             }
         })
     }
 
-    document.querySelector('.result').addEventListener('click', function(){//funkcja pokazująca wynik w konsoli
-        console.log(`Najsampierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`);
-        display.textContent =`Najsampierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
+    //obliczanie czasów dodawania składników--------------------------------------------------------
+    document.querySelector('.result').addEventListener('click', function(){
+        //display.textContent +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
+        display.innerHTML +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
         for (let i = 1; i < (ingredients.length); i++) {
 
             const addingMinutes = ingredients[0].value - ingredients[i].value; //po jakim czasie od rozpoczęcia gotowania wrzucić
@@ -77,15 +87,25 @@ $.getJSON('table.json', function(data){
             }
             addingTime = leadingZero(addingTime);
             addingHour = leadingZero(addingHour);
-            console.log(`o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`);
             //display.textContent += ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
 
             const el = [];//utworzenie tablicy elementów div w których będą wyświetlane kolejne czasy
             el[i] =document.createElement("div");
             el[i].textContent = ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
             display.appendChild(el[i]);
+            display.classList.add('active');
+            document.getElementById('cover').classList.add('active');
+            el[i] = '';
 
+            document.querySelector('.close').addEventListener('click', function(){
+                display.classList.remove('active');
+                document.querySelector('#cover').classList.remove('active');
+                display.innerHTML ='<div id="close" class="close">X</div>';
+            });
         }
-    })
+    });
+
+
 
 });
+
