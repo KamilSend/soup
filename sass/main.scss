@@ -1,34 +1,70 @@
 @import './_definitions.scss';
 
-h1,h2,h3,h4,h5,h6{
+body, html{
+  scroll-behavior: smooth;
+  font-size: 10px;
+}
+
+h1,h2,h3,h4,h5,h6, body, html{
   padding:0;
   margin:0;
+  text-align: center;
+  font-family: 'Kalam', cursive;
+}
+
+a{
+  text-decoration: none;
+}
+.backgroundImg{
+  position: fixed;
+  left:0;
+  top:0;
+  height: 100vh;
+  width:100vw;
+  object-fit: cover;
+}
+
+.imgOverlay{
+  background-color: rgba(255,255,255,.5);
+  position: fixed;
+  left:0;
+  top:0;
+  height: 100vh;
+  width:100vw;
+}
+
+section{
+  height: auto;
+  position: relative;
+  top:0;
+  left:0;
 }
 
 body{
   display:flex;
   justify-content: center;
-  background-color: aliceblue;
 }
-main{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  width:90vw;
-  height:90vh;
 
   h1{
-    padding:3vh;
+    padding:2.5vh;
+    font-size: 4rem;
+    color: darken(darkred,20%);
   }
 
   h2{
-    padding:2vh;
+    padding:1.5vh;
+    font-size: 3rem;
   }
 
-  h3.paddingMedium{
-    padding:4vh;
+  h3{
+    font-size: 2rem;
+    padding:1.5vh;
   }
 
+.foodGroupTitle{
+  width:100%;
+  text-align: center;
+  margin:5px;
 }
 
 .button{
@@ -37,30 +73,55 @@ main{
   padding:5px 10px;
   outline:none;
   cursor:pointer;
-  box-shadow: 1px 1px 5px 1px gray;
+  //box-shadow: 1px 1px 5px 1px gray;
+  box-shadow: 3px 3px 5px 2px rgba(0,0,0, .7);
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Kalam', cursive;
 }
 
-.now, .result{
-  background-color: darkred;
-  color: white;
+.button.now{
+  border:2px solid darkred;
+  box-shadow: 3px 3px 5px 2px rgba(0,0,0, .0);
+  h3{
+    padding:0;
+  }
 }
 
 .result{
-  padding: 10px 20px;
+  width:15vw;
+  color: white;
+  background-color: darkred;
+}
+
+.result{
+  padding: 10px 40px;
+  margin-bottom:20px;
 }
 .foodGroup{
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
   padding:10px;
 }
 
 .ingredient{
-  border: 2px solid transparent;
+  border: 3px solid transparent;
+  width:14vw;
+
+  @include respond(tab-port){
+    width:25vw;
+  }
+
+  @include respond(phone){
+    width:40vw;
+    margin:3px;
+  }
 }
 
 .btnActive{
-    border: 2px solid black;
+    border: 3px solid black;
 }
 
 .vegetable{
@@ -70,28 +131,42 @@ main{
 .meat{
   background-color: sandybrown;
 }
+
+#calculations{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
  #timeInput{
    min-height: 30px;
-   font-size:24px;
+   font-size:2.5rem;
    padding-left:30px;
    border:none;
    outline:none;
    background-color: transparent;
  }
 
+ .time{
+   display: flex;
+   width: 100%;
+   justify-content: center;
+ }
+
  #displayResult{
-   position:absolute;
+   position:fixed;
    left:5vw;
    right:5vw;
    top:50vh;
    transform: translateY(-50%);
-
    background-color: #fefefe;
    padding:2vh;
    box-shadow: 1px 1px 5px #000000;
    border-radius: 5px;
    display:none;
    z-index: 3;
+   font-size: 2rem;
 
    @include respond(phone-land){
      top:5vh;
@@ -123,6 +198,6 @@ main{
   bottom:0;
   background-color: lightgray;
   z-index:2;
-  opacity:.2;
+  opacity:.8;
   display: none;
 }

@@ -37,18 +37,6 @@ $.getJSON('table.json', function(data){
 
     }, 1000);
 
-   /* for (let i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', function table(){
-
-            ingredients.push(data.components[i].component); //dodawanie klikniętych elementów do tablicy
-            ingredients.sort(function(a, b) { //posortowanie tablicy
-                return a.value - b.value;
-            });
-            ingredients.reverse(); //odwrócenie tablicy żeby pierwsze były największe wartości
-            buttons[i].classList.toggle('btnActive');//zaznaczenie wybranego składnika
-        })
-    }*/
-
    //tworzenie przycisków ze składnikami-----------------------------------------------------------
 
 
@@ -74,11 +62,11 @@ $.getJSON('table.json', function(data){
     //obliczanie czasów dodawania składników--------------------------------------------------------
     document.querySelector('.result').addEventListener('click', function(){
 
-
-            $('#result').click(function(){
-                $("html, body").animate({ scrollTop: 0 }, 500);
-                return false;
-            });
+            //przewijanie jquery
+            // $('#result').click(function(){
+            //     $("html, body").animate({ scrollTop: 0 }, 500);
+            //     return false;
+            // });
 
         //display.textContent +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
         display.innerHTML +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
@@ -110,12 +98,8 @@ $.getJSON('table.json', function(data){
                 display.innerHTML ='<div id="close" class="close">X</div>';
             });
 
-
-
         }
     });
-
-
 
 });
 

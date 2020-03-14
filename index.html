@@ -12,45 +12,60 @@
     <title>Calculator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
+
 <main>
+    <img src="kitchen.jpg" alt="kitchen" class="backgroundImg">
+    <div class="imgOverlay"></div>
+    <section id="title">
 
-    <h1>Zupny kalkulator</h1>
-    <h2>Wybierz swoje składniki i dowiedz się kiedy je dodać aby wszystkie ugotowały się w tym samym czasie</h2>
+        <h1 id="mainTitle">Soup Calculator</h1>
+        <h2>Choose your ingredients to find out the time of cooking</h2>
+    </section>
 
-<div class="foodGroup">
-    <h3>Warzywa:</h3>
-    <button class="ingredient button vegetable">Ziemniaki</button>
-    <button class="ingredient button vegetable">Marchewka</button>
-    <button class="ingredient button vegetable">Cebula</button>
-    <button class="ingredient button vegetable">Pietruszka</button>
-    <button class="ingredient button vegetable">Pory</button>
-    <button class="ingredient button vegetable">Fasolka szparagowa</button>
-    <button class="ingredient button vegetable">Kalafior</button>
-    <button class="ingredient button vegetable">Papryka</button>
-    <button class="ingredient button vegetable">Cukinia</button>
-    <button class="ingredient button vegetable">Seler</button>
-    <button class="ingredient button vegetable">Burak</button>
-    <button class="ingredient button vegetable">Czosnek</button>
-</div>
-<div class="foodGroup">
-    <h3>Mięsa:</h3>
-    <button class="ingredient button meat">Udko z kurczaka</button>
-    <button class="ingredient button meat">Pierś z kurczaka</button>
-    <button class="ingredient button meat">Żeberka</button>
-    <button class="ingredient button meat">Udziec z indyka</button>
-</div>
-    <h3 class="paddingMedium">Określ start gotowania:</h3>
-    <input type="time" value="12:00" id="timeInput">
-    <h3 class="paddingMedium">lub</h3>
-    <div class="button now">Zacznij teraz</div><br>
+    <section id="ingredients">
+        <div class="foodGroup">
+            <h3 class="foodGroupTitle">Wegetables</h3>
+            <button class="ingredient button vegetable">Ziemniaki</button>
+            <button class="ingredient button vegetable">Marchewka</button>
+            <button class="ingredient button vegetable">Cebula</button>
+            <button class="ingredient button vegetable">Pietruszka</button>
+            <button class="ingredient button vegetable">Pory</button>
+            <button class="ingredient button vegetable">Fasolka szparagowa</button>
+            <button class="ingredient button vegetable">Kalafior</button>
+            <button class="ingredient button vegetable">Papryka</button>
+            <button class="ingredient button vegetable">Cukinia</button>
+            <button class="ingredient button vegetable">Seler</button>
+            <button class="ingredient button vegetable">Burak</button>
+            <button class="ingredient button vegetable">Czosnek</button>
+        </div>
+        <div class="foodGroup">
+            <h3 class="foodGroupTitle">Meat:</h3>
+            <button class="ingredient button meat">Udko z kurczaka</button>
+            <button class="ingredient button meat">Pierś z kurczaka</button>
+            <button class="ingredient button meat">Żeberka</button>
+            <button class="ingredient button meat">Udziec z indyka</button>
+        </div>
+    </section>
+    <section id="calculations">
+        <h3>Określ start gotowania:</h3>
+        <div class="time">
+        <input type="time" value="12:00" id="timeInput">
 
-    <div id="result" class="button result">Oblicz</div>
-    <div class="displayResult"></div>
+            <div class="button now"><h3>Start now</h3></div><br>
+        </div>
 
-    <div id="displayResult"><div id="close" class="close">X</div></div>
-    <div id="cover"></div>
+
+        <a href="#mainTitle"><div id="result" class="button result">Oblicz</div></a>
+        <div class="displayResult"></div>
+
+        <div id="displayResult"><div id="close" class="close">X</div></div>
+        <div id="cover"></div>
+    </section>
 
 
 </main>
