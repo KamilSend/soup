@@ -94,6 +94,11 @@ body{
   text-align: center;
   font-size: 1.6rem;
   font-family: 'Kalam', cursive;
+
+  &:active{
+    transform: translate(0, 2%);
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0, .7);
+  }
 }
 
 .button.now{
@@ -102,12 +107,23 @@ body{
   h3{
     padding:0;
   }
+  &:active{
+    transform: translate(0, 0);
+  }
 }
 
 .result{
   width:15vw;
   color: white;
   background-color: darkred;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0, .7);
+
+
+  &:active{
+    transform: translate(0, 2%);
+    box-shadow: 1px 1px 5px 1px rgba(0,0,0, .7);
+
+  }
 }
 
 .result{

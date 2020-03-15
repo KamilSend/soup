@@ -15,7 +15,6 @@ $.getJSON('table.json', function(data){
         return (i < 10)? "0"+i : i;
     }
 
-
     //wczytanie obecnego czasu------------------------------------------------------------------------
     const timeInput = document.getElementById('timeInput');
 
@@ -62,44 +61,52 @@ $.getJSON('table.json', function(data){
     //obliczanie czasów dodawania składników--------------------------------------------------------
     document.querySelector('.result').addEventListener('click', function(){
 
-            //przewijanie jquery
-            // $('#result').click(function(){
-            //     $("html, body").animate({ scrollTop: 0 }, 500);
-            //     return false;
-            // });
+        if(ingredients.length>1){
+            //display.textContent +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
+            display.innerHTML +=`First add ${ingredients[0].name} at ${hour}:${minute}`;
+            for (let i = 1; i < (ingredients.length); i++) {
 
-        //display.textContent +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
-        display.innerHTML +=`First add ${ingredients[0].name} at ${hour}:${minute}`;
-        for (let i = 1; i < (ingredients.length); i++) {
+                const addingMinutes = ingredients[0].value - ingredients[i].value; //po jakim czasie od rozpoczęcia gotowania wrzucić
+                let addingTime = minute + addingMinutes;
+                let addingHour = hour;
+                //zadziała tylko jeśli nie trzeba będzie przerzucać godziny więcej niż raz, czyli wywali się przy różnicach większych od godziny
+                if(addingTime>59 && (addingHour - hour <=1)){
+                    addingTime = addingTime - 60;
+                    addingHour +=1;
+                }
+                addingTime = leadingZero(addingTime);
+                addingHour = leadingZero(addingHour);
+                //display.textContent += ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
 
-            const addingMinutes = ingredients[0].value - ingredients[i].value; //po jakim czasie od rozpoczęcia gotowania wrzucić
-            let addingTime = minute + addingMinutes;
-            let addingHour = hour;
-            //zadziała tylko jeśli nie trzeba będzie przerzucać godziny więcej niż raz, czyli wywali się przy różnicach większych od godziny
-            if(addingTime>59 && (addingHour - hour <=1)){
-                addingTime = addingTime - 60;
-                addingHour +=1;
+                const el = [];//utworzenie tablicy elementów div w których będą wyświetlane kolejne czasy
+                el[i] =document.createElement("div");
+                el[i].textContent = ` at ${addingHour} : ${addingTime} add ${ingredients[i].name}`;
+                display.appendChild(el[i]);
+                display.classList.add('active');
+                document.getElementById('cover').classList.add('active');
+                el[i] = '';
+
+                document.querySelector('.close').addEventListener('click', function(){
+                    display.classList.remove('active');
+                    document.querySelector('#cover').classList.remove('active');
+                    display.innerHTML ='<div id="close" class="close">X</div>';
+                });
+
             }
-            addingTime = leadingZero(addingTime);
-            addingHour = leadingZero(addingHour);
-            //display.textContent += ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
-
-            const el = [];//utworzenie tablicy elementów div w których będą wyświetlane kolejne czasy
-            el[i] =document.createElement("div");
-            el[i].textContent = ` at ${addingHour} : ${addingTime} add ${ingredients[i].name}`;
-            display.appendChild(el[i]);
+        }
+        else if (ingredients.length==1){
+            display.innerHTML +=`First add ${ingredients[0].name} at ${hour}:${minute}`;
             display.classList.add('active');
             document.getElementById('cover').classList.add('active');
-            el[i] = '';
 
             document.querySelector('.close').addEventListener('click', function(){
                 display.classList.remove('active');
                 document.querySelector('#cover').classList.remove('active');
                 display.innerHTML ='<div id="close" class="close">X</div>';
             });
-
         }
     });
+
 
 });
 
