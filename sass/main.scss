@@ -38,6 +38,8 @@ section{
   position: relative;
   top:0;
   left:0;
+  padding:0;
+  margin:0;
 }
 
 body{
@@ -49,16 +51,32 @@ body{
     padding:2.5vh;
     font-size: 4rem;
     color: darken(darkred,20%);
+
+    @include respond(phone){
+      font-size: 3rem;
+      padding:1vh 1vh 1vh 1vh;
+    }
   }
 
   h2{
     padding:1.5vh;
     font-size: 3rem;
+
+    @include respond(phone){
+      font-size: 2.4rem;
+      padding:0 1vh 0 1vh;
+    }
   }
 
   h3{
     font-size: 2rem;
     padding:1.5vh;
+    margin:0;
+
+    @include respond(phone){
+      font-size: 2.4rem;
+      padding:0 1vh 0 1vh;
+    }
   }
 
 .foodGroupTitle{
@@ -69,14 +87,12 @@ body{
 
 .button{
   border-radius: 20px;
-  margin:5px;
-  padding:5px 10px;
+  margin:3px;
   outline:none;
   cursor:pointer;
-  //box-shadow: 1px 1px 5px 1px gray;
   box-shadow: 3px 3px 5px 2px rgba(0,0,0, .7);
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-family: 'Kalam', cursive;
 }
 

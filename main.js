@@ -69,7 +69,7 @@ $.getJSON('table.json', function(data){
             // });
 
         //display.textContent +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
-        display.innerHTML +=`Najpierw wrzuć ${ingredients[0].name} o ${hour}:${minute}`;
+        display.innerHTML +=`First add ${ingredients[0].name} at ${hour}:${minute}`;
         for (let i = 1; i < (ingredients.length); i++) {
 
             const addingMinutes = ingredients[0].value - ingredients[i].value; //po jakim czasie od rozpoczęcia gotowania wrzucić
@@ -86,7 +86,7 @@ $.getJSON('table.json', function(data){
 
             const el = [];//utworzenie tablicy elementów div w których będą wyświetlane kolejne czasy
             el[i] =document.createElement("div");
-            el[i].textContent = ` o ${addingHour} : ${addingTime} wrzuć ${ingredients[i].name}`;
+            el[i].textContent = ` at ${addingHour} : ${addingTime} add ${ingredients[i].name}`;
             display.appendChild(el[i]);
             display.classList.add('active');
             document.getElementById('cover').classList.add('active');

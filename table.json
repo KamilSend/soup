@@ -3,97 +3,97 @@
     {
 
       "component": {
-        "name": "ziemniaki",
+        "name": "Potato",
         "value": 30
       }
     },
     {
       "component": {
-        "name": "marchewkę",
+        "name": "Carrot",
         "value": 40
       }
     },
     {
       "component": {
-        "name": "cebulę",
+        "name": "Onion",
         "value": 35
       }
     },
     {
       "component": {
-        "name": "pietruszkę",
+        "name": "Parsley",
         "value": 45
       }
     },
     {
       "component": {
-        "name": "pory",
+        "name": "Leek",
         "value": 10
       }
     },
     {
       "component": {
-        "name": "fasolkę szparagową",
+        "name": "Green beans",
         "value": 15
       }
     },
     {
       "component": {
-        "name": "kalafiora",
+        "name": "Cauliflower",
         "value": 15
       }
     },
     {
       "component": {
-        "name": "paprykę",
+        "name": "Pepper",
         "value": 20
       }
     },
     {
       "component": {
-        "name": "cukinię",
+        "name": "Courgette",
         "value": 20
       }
     },
     {
       "component": {
-        "name": "selera",
+        "name": "Celery",
         "value": 45
       }
     },
     {
       "component": {
-        "name": "buraka",
+        "name": "Beetroot",
         "value": 45
       }
     },
     {
       "component": {
-        "name": "czosnek",
+        "name": "Garlic",
         "value": 10
       }
     },
     {
       "component": {
-        "name": "udko z kurczaka",
+        "name": "Chicken leg",
         "value": 45
       }
     },
     {
       "component": {
-        "name": "pierś z kurczaka",
+        "name": "Chicken breast",
         "value": 30
       }
     },
     {
       "component": {
-        "name": "żeberka",
+        "name": "Ribs",
         "value": 60
       }
     },
     {
       "component": {
-        "name": "udziec z indyka",
+        "name": "Turkey thigh",
         "value": 50
       }
     }
