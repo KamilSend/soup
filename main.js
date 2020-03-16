@@ -131,6 +131,11 @@ $.getJSON('table.json', function(data){
 
             }
         }
+            else if (helpingTable.length===1 || helpingTable.length===0){
+                window.alert("You need to choose at least two ingredients");
+            }
+
+
         // else if (ingredients.length==1){
         //     console.log(ingredients);
         //     display.innerHTML +=`First add ${ingredients[0].name} at ${hour}:${minute}`;
