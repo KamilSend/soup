@@ -100,7 +100,7 @@ $.getJSON('table.json', function(data){
         console.log(helpingTable);
 
             if(helpingTable.length>1){
-            display.innerHTML +=`First add ${helpingTable[0].name} at ${hour}:${minute}`;
+            display.innerHTML +=`First add ${helpingTable[0].name} at ${leadingZero(hour)}:${leadingZero(minute)}`;
             for (let i = 1; i < (helpingTable.length); i++) {
                 if(helpingTable[i]!==0){
                 const addingMinutes = helpingTable[0].value - helpingTable[i].value; //po jakim czasie od rozpoczęcia gotowania wrzucić
