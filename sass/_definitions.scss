@@ -29,3 +29,34 @@
     @media only screen and (max-width: 1000px) { @content };
   }
 }
+
+@mixin miniScrollbars($axis){
+  scrollbar-face-color: rgba(lightgreen, 0.5);
+  scrollbar-arrow-color: lightgreen;
+  scrollbar-track-color: transparent;
+  scrollbar-shadow-color: transparent;
+  scrollbar-highlight-color: transparent;
+  scrollbar-3dlight-color: transparent;
+  scrollbar-darkshadow-color: transparent;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  &::-webkit-scrollbar {
+    @if $axis == x{
+      height: 5px;
+    } @else {
+      width: 5px;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: lightgreen;
+  }
+  scrollbar-width: thin;
+  scrollbar-color: var(--nhood-color) transparent;
+}
+
+@mixin miniScrollbar{
+  @include miniScrollbars(y);
+}
+@mixin miniScrollbarX{
+  @include miniScrollbars(x);
+}

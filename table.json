@@ -1,16 +1,51 @@
 {
   "components": [
     {
-
       "component": {
-        "name": "Potato",
-        "value": 30
+        "name": "Beetroot",
+        "value": 45
       }
     },
     {
       "component": {
         "name": "Carrot",
         "value": 40
+      }
+    },
+    {
+      "component": {
+        "name": "Cauliflower",
+        "value": 15
+      }
+    },
+    {
+      "component": {
+        "name": "Celery",
+        "value": 45
+      }
+    },
+    {
+      "component": {
+        "name": "Courgette",
+        "value": 20
+      }
+    },
+    {
+      "component": {
+        "name": "Garlic",
+        "value": 10
+      }
+    },
+    {
+      "component": {
+        "name": "Green beans",
+        "value": 15
+      }
+    },
+    {
+      "component": {
+        "name": "Leek",
+        "value": 10
       }
     },
     {
@@ -27,62 +62,26 @@
     },
     {
       "component": {
-        "name": "Leek",
-        "value": 10
-      }
-    },
-    {
-      "component": {
-        "name": "Green beans",
-        "value": 15
-      }
-    },
-    {
-      "component": {
-        "name": "Cauliflower",
-        "value": 15
-      }
-    },
-    {
-      "component": {
         "name": "Pepper",
         "value": 20
       }
     },
     {
       "component": {
-        "name": "Courgette",
-        "value": 20
-      }
-    },
-    {
-      "component": {
-        "name": "Celery",
-        "value": 45
-      }
-    },
-    {
-      "component": {
-        "name": "Beetroot",
-        "value": 45
-      }
-    },
-    {
-      "component": {
-        "name": "Garlic",
-        "value": 10
-      }
-    },
-    {
-      "component": {
-        "name": "Chicken leg",
-        "value": 45
+        "name": "Potato",
+        "value": 30
       }
     },
     {
       "component": {
         "name": "Chicken breast",
         "value": 30
+      }
+    },
+    {
+      "component": {
+        "name": "Chicken leg",
+        "value": 45
       }
     },
     {

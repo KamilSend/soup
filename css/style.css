@@ -10,7 +10,21 @@
 
 body, html {
   scroll-behavior: smooth;
-  font-size: 10px; }
+  font-size: 10px;
+  scrollbar-face-color: rgba(144, 238, 144, 0.5);
+  scrollbar-arrow-color: lightgreen;
+  scrollbar-track-color: transparent;
+  scrollbar-shadow-color: transparent;
+  scrollbar-highlight-color: transparent;
+  scrollbar-3dlight-color: transparent;
+  scrollbar-darkshadow-color: transparent;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-width: thin;
+  scrollbar-color: var(--nhood-color) transparent; }
+  body::-webkit-scrollbar, html::-webkit-scrollbar {
+    width: 5px; }
+  body::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
+    background-color: lightgreen; }
 
 h1, h2, h3, h4, h5, h6, body, html {
   padding: 0;
@@ -172,7 +186,23 @@ h3 {
   border-radius: 5px;
   display: none;
   z-index: 3;
-  font-size: 2rem; }
+  font-size: 2rem;
+  max-height: 80vh;
+  overflow-Y: scroll;
+  scrollbar-face-color: rgba(144, 238, 144, 0.5);
+  scrollbar-arrow-color: lightgreen;
+  scrollbar-track-color: transparent;
+  scrollbar-shadow-color: transparent;
+  scrollbar-highlight-color: transparent;
+  scrollbar-3dlight-color: transparent;
+  scrollbar-darkshadow-color: transparent;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-width: thin;
+  scrollbar-color: var(--nhood-color) transparent; }
+  #displayResult::-webkit-scrollbar {
+    width: 5px; }
+  #displayResult::-webkit-scrollbar-thumb {
+    background-color: lightgreen; }
   @media only screen and (max-height: 450px) {
     #displayResult {
       top: 5vh;

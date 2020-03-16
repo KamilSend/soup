@@ -3,6 +3,8 @@
 body, html{
   scroll-behavior: smooth;
   font-size: 10px;
+
+  @include miniScrollbar;
 }
 
 h1,h2,h3,h4,h5,h6, body, html{
@@ -199,6 +201,10 @@ body{
    display:none;
    z-index: 3;
    font-size: 2rem;
+   max-height: 80vh;
+   overflow-Y: scroll;
+
+   @include miniScrollbar;
 
    @include respond(phone-land){
      top:5vh;
