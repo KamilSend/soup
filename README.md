@@ -18,10 +18,6 @@ Node.js package manager version 6.13 or higher
 ```
 sudo apt-get install npm
 ```
-Node-sass version 4.13 or higher
-```
-npm install node-sass
-```
 Live server version 1.2.1 or higher
 ```
 npm install -g live-server
